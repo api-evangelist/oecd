@@ -8,12 +8,10 @@ type: Index
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
+tags: []
 created: '2025-02-06'
 modified: '2026-03-16'
-url: 
-  https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
   - aid: oecd:oecd
@@ -23,8 +21,7 @@ apis:
       interface (API) based on the SDMX standard.These APIs are free of charge and
       are offered subject to your acceptance of OECD Terms and Conditions.
     humanURL: ' https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html'
-    tags:
-      - API
+    tags: []
     properties:
       - type: Documentation
         url: ' https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html'
