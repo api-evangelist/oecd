@@ -38,7 +38,7 @@ apis:
 common:
   - type: Website
     url: https://www.oecd.org/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.oecd.org/termsandconditions/
 maintainers:
   - FN: Kin Lane
