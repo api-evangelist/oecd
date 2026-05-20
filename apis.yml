@@ -36,6 +36,10 @@ apis:
       - type: Developer
         url: https://data-explorer.oecd.org/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/OECD
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/oecd
   - type: Website
     url: https://www.oecd.org/
   - type: TermsOfService
