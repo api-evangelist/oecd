@@ -1,0 +1,228 @@
+openapi: 3.1.0
+info:
+  title: OECD SDMX REST API
+  description: |
+    The OECD provides programmatic access to its statistical data through a
+    public SDMX REST API. Both SDMX REST v1.5.0 and v2.0.0 paths are exposed.
+    Endpoints return data and structural metadata (dataflows, code lists,
+    concept schemes, agencies) about OECD datasets. The API is free of charge
+    and offered under the OECD Terms and Conditions; no authentication is
+    required for public data.
+  version: "2.0.0"
+  contact:
+    name: OECD Data
+    url: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+servers:
+  - url: https://sdmx.oecd.org/public/rest
+    description: OECD SDMX public REST API (v1.5 paths)
+  - url: https://sdmx.oecd.org/public/rest/v2
+    description: OECD SDMX public REST API (v2 paths)
+security: []
+tags:
+  - name: Data
+  - name: Structure
+paths:
+  /data/{flow}/{key}:
+    get:
+      tags: [Data]
+      summary: Retrieve data (SDMX v1.5 path)
+      description: |
+        Retrieve observations for a dataflow filtered by a dimension key
+        (dot-separated dimension codes). Supports SDMX content negotiation
+        (XML / JSON / CSV) via the Accept header.
+      parameters:
+        - in: path
+          name: flow
+          required: true
+          schema:
+            type: string
+          description: Full dataflow reference, e.g. `OECD.ENV.EPI,DSD_ECH@EXT_DROUGHT,1.0`
+        - in: path
+          name: key
+          required: true
+          schema:
+            type: string
+          description: Dot-separated dimension key (use `all` to retrieve everything)
+        - in: query
+          name: startPeriod
+          schema:
+            type: string
+          description: Start of time period (e.g. 2020)
+        - in: query
+          name: endPeriod
+          schema:
+            type: string
+          description: End of time period (e.g. 2024)
+        - in: query
+          name: dimensionAtObservation
+          schema:
+            type: string
+        - in: query
+          name: updatedAfter
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Data response
+          content:
+            application/vnd.sdmx.data+json: {}
+            application/vnd.sdmx.genericdata+xml: {}
+            text/csv: {}
+  /v2/data/dataflow/{agencyId}/{flowId}/{version}/{key}:
+    get:
+      tags: [Data]
+      summary: Retrieve data (SDMX v2 path)
+      description: |
+        SDMX v2.0.0 data query with explicit agency, dataflow, version and
+        key components, plus enhanced attribute, measure, and update filters.
+      parameters:
+        - in: path
+          name: agencyId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: flowId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: version
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: key
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: startPeriod
+          schema:
+            type: string
+        - in: query
+          name: endPeriod
+          schema:
+            type: string
+        - in: query
+          name: attributes
+          schema:
+            type: string
+            enum: [dsd, msd, all, none]
+        - in: query
+          name: measures
+          schema:
+            type: string
+            enum: [all, none]
+        - in: query
+          name: updatedAfter
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Data response (SDMX v2)
+  /dataflow/{agencyId}/{resourceId}/{version}:
+    get:
+      tags: [Structure]
+      summary: Retrieve dataflow metadata
+      parameters:
+        - in: path
+          name: agencyId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: resourceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: version
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: references
+          schema:
+            type: string
+            enum: [none, parents, parentsandsiblings, children, descendants, all]
+        - in: query
+          name: detail
+          schema:
+            type: string
+            enum: [full, allstubs, referencestubs]
+      responses:
+        "200":
+          description: SDMX structure response
+  /datastructure/{agencyId}/{resourceId}/{version}:
+    get:
+      tags: [Structure]
+      summary: Retrieve data structure definition (DSD)
+      parameters:
+        - in: path
+          name: agencyId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: resourceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: version
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: SDMX DSD response
+  /codelist/{agencyId}/{resourceId}/{version}:
+    get:
+      tags: [Structure]
+      summary: Retrieve a code list
+      parameters:
+        - in: path
+          name: agencyId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: resourceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: version
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: SDMX code list response
+  /conceptscheme/{agencyId}/{resourceId}/{version}:
+    get:
+      tags: [Structure]
+      summary: Retrieve a concept scheme
+      parameters:
+        - in: path
+          name: agencyId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: resourceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: version
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: SDMX concept scheme response
+components: {}
