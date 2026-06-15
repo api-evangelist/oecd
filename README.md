@@ -2,7 +2,7 @@
 
 The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard. These APIs are free of charge and are offered subject to your acceptance of OECD Terms and Conditions.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml)
 
 ## Scope
 
@@ -26,11 +26,10 @@ The OECD provides programmatic access to OECD data through an application progra
 
 ### OECD Data API
 
-The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard.
+The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard. These APIs are free of charge and are offered subject to your acceptance of OECD Terms and Conditions.
 
-**Human URL:** [https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html](https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html)
-
-**Base URL:** `https://sdmx.oecd.org/public/rest`
+- **Human URL:** [https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html](https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html)
+- **Base URL:** `https://sdmx.oecd.org/public/rest`
 
 #### Tags
 
@@ -42,14 +41,17 @@ The OECD provides programmatic access to OECD data through an application progra
 
 - [Documentation](https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html)
 - [Developer](https://data-explorer.oecd.org/)
+- [Postman Collection](collections/oecd.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/oecd.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
+- [GitHub Organization](https://github.com/OECD)
+- [LinkedIn](https://www.linkedin.com/company/oecd)
 - [Website](https://www.oecd.org/)
 - [Terms of Service](https://www.oecd.org/termsandconditions/)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com

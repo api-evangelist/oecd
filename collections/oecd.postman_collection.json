@@ -1,0 +1,802 @@
+{
+  "item": [
+    {
+      "id": "3567ef7d-fe16-449c-8cd2-575468da4f21",
+      "name": "Data",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "befac9f3-2250-492c-a0f5-7eb8e2c2536f",
+          "name": "Retrieve data (SDMX v1.5 path)",
+          "request": {
+            "name": "Retrieve data (SDMX v1.5 path)",
+            "description": {
+              "content": "Retrieve observations for a dataflow filtered by a dimension key\n(dot-separated dimension codes). Supports SDMX content negotiation\n(XML / JSON / CSV) via the Accept header.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                ":flow",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startPeriod",
+                  "value": "<string>",
+                  "description": "Start of time period (e.g. 2020)"
+                },
+                {
+                  "disabled": false,
+                  "key": "endPeriod",
+                  "value": "<string>",
+                  "description": "End of time period (e.g. 2024)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dimensionAtObservation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updatedAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flow",
+                  "description": "(Required) Full dataflow reference, e.g. `OECD.ENV.EPI,DSD_ECH@EXT_DROUGHT,1.0`"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) Dot-separated dimension key (use `all` to retrieve everything)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sdmx.data+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6326e02e-fa3f-4bdd-99ef-1c15ac129f13",
+              "name": "Data response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    ":flow",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startPeriod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endPeriod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dimensionAtObservation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updatedAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flow",
+                      "description": "(Required) Full dataflow reference, e.g. `OECD.ENV.EPI,DSD_ECH@EXT_DROUGHT,1.0`"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) Dot-separated dimension key (use `all` to retrieve everything)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sdmx.data+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sdmx.data+json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b777545-bab2-48ff-bdc0-9610fe222d30",
+          "name": "Retrieve data (SDMX v2 path)",
+          "request": {
+            "name": "Retrieve data (SDMX v2 path)",
+            "description": {
+              "content": "SDMX v2.0.0 data query with explicit agency, dataflow, version and\nkey components, plus enhanced attribute, measure, and update filters.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "data",
+                "dataflow",
+                ":agencyId",
+                ":flowId",
+                ":version",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startPeriod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endPeriod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "attributes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "measures",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updatedAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agencyId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "flowId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3bf3e03-1e42-4cdf-a52a-65f2441770b9",
+              "name": "Data response (SDMX v2)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "data",
+                    "dataflow",
+                    ":agencyId",
+                    ":flowId",
+                    ":version",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startPeriod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endPeriod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attributes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "measures",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updatedAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agencyId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "flowId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3e7d1d4f-8505-4b4d-bd4a-dff4e4b48a52",
+      "name": "Structure",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "373dafb9-a6e6-43ce-bf37-2f6dba85fbf5",
+          "name": "Retrieve dataflow metadata",
+          "request": {
+            "name": "Retrieve dataflow metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "dataflow",
+                ":agencyId",
+                ":resourceId",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "references",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "detail",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agencyId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0367e541-d5fe-405b-86e1-78bec0f6b630",
+              "name": "SDMX structure response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflow",
+                    ":agencyId",
+                    ":resourceId",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "references",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "detail",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agencyId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef9c9492-85a7-43b9-86f6-9e0af161a44d",
+          "name": "Retrieve data structure definition (DSD)",
+          "request": {
+            "name": "Retrieve data structure definition (DSD)",
+            "description": {},
+            "url": {
+              "path": [
+                "datastructure",
+                ":agencyId",
+                ":resourceId",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agencyId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "282f28dd-5b10-4c6d-a08f-54b4c674079a",
+              "name": "SDMX DSD response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datastructure",
+                    ":agencyId",
+                    ":resourceId",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agencyId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0635462f-6749-40d8-9d08-5d349626186e",
+          "name": "Retrieve a code list",
+          "request": {
+            "name": "Retrieve a code list",
+            "description": {},
+            "url": {
+              "path": [
+                "codelist",
+                ":agencyId",
+                ":resourceId",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agencyId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c2c3892-23c4-4284-b5c6-e0a8495148e7",
+              "name": "SDMX code list response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "codelist",
+                    ":agencyId",
+                    ":resourceId",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agencyId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "da14db06-bc77-4b6a-8fd5-2d91c43a3e88",
+          "name": "Retrieve a concept scheme",
+          "request": {
+            "name": "Retrieve a concept scheme",
+            "description": {},
+            "url": {
+              "path": [
+                "conceptscheme",
+                ":agencyId",
+                ":resourceId",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agencyId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "150b8bf0-5dac-4e92-b92d-6c90591b3a83",
+              "name": "SDMX concept scheme response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptscheme",
+                    ":agencyId",
+                    ":resourceId",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agencyId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sdmx.oecd.org/public/rest",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "eca6b64a-e03e-457c-acff-83fda9932998",
+    "name": "OECD SDMX REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OECD provides programmatic access to its statistical data through a\npublic SDMX REST API. Both SDMX REST v1.5.0 and v2.0.0 paths are exposed.\nEndpoints return data and structural metadata (dataflows, code lists,\nconcept schemes, agencies) about OECD datasets. The API is free of charge\nand offered under the OECD Terms and Conditions; no authentication is\nrequired for public data.\n\n\nContact Support:\n Name: OECD Data",
+      "type": "text/plain"
+    }
+  }
+}
