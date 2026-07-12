@@ -36,6 +36,8 @@ apis:
       - type: Developer
         url: https://data-explorer.oecd.org/
 common:
+  - type: DomainSecurity
+    url: security/oecd-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/OECD
   - type: LinkedIn
