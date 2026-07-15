@@ -36,6 +36,8 @@ apis:
       - type: Developer
         url: https://data-explorer.oecd.org/
 common:
+  - type: AgenticAccess
+    url: agentic-access/oecd-agentic-access.yml
   - type: DomainSecurity
     url: security/oecd-domain-security.yml
   - type: GitHubOrganization
