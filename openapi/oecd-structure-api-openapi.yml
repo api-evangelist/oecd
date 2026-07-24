@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: OECD SDMX REST Data Structure API
+  description: 'The OECD provides programmatic access to its statistical data through a
+
+    public SDMX REST API. Both SDMX REST v1.5.0 and v2.0.0 paths are exposed.
+
+    Endpoints return data and structural metadata (dataflows, code lists,
+
+    concept schemes, agencies) about OECD datasets. The API is free of charge
+
+    and offered under the OECD Terms and Conditions; no authentication is
+
+    required for public data.
+
+    '
+  version: 2.0.0
+  contact:
+    name: OECD Data
+    url: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+servers:
+- url: https://sdmx.oecd.org/public/rest
+  description: OECD SDMX public REST API (v1.5 paths)
+- url: https://sdmx.oecd.org/public/rest/v2
+  description: OECD SDMX public REST API (v2 paths)
+security: []
+tags:
+- name: Structure
+paths:
+  /dataflow/{agencyId}/{resourceId}/{version}:
+    get:
+      tags:
+      - Structure
+      summary: Retrieve dataflow metadata
+      parameters:
+      - in: path
+        name: agencyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: version
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: references
+        schema:
+          type: string
+          enum:
+          - none
+          - parents
+          - parentsandsiblings
+          - children
+          - descendants
+          - all
+      - in: query
+        name: detail
+        schema:
+          type: string
+          enum:
+          - full
+          - allstubs
+          - referencestubs
+      responses:
+        '200':
+          description: SDMX structure response
+  /datastructure/{agencyId}/{resourceId}/{version}:
+    get:
+      tags:
+      - Structure
+      summary: Retrieve data structure definition (DSD)
+      parameters:
+      - in: path
+        name: agencyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: version
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: SDMX DSD response
+  /codelist/{agencyId}/{resourceId}/{version}:
+    get:
+      tags:
+      - Structure
+      summary: Retrieve a code list
+      parameters:
+      - in: path
+        name: agencyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: version
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: SDMX code list response
+  /conceptscheme/{agencyId}/{resourceId}/{version}:
+    get:
+      tags:
+      - Structure
+      summary: Retrieve a concept scheme
+      parameters:
+      - in: path
+        name: agencyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: version
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: SDMX concept scheme response
