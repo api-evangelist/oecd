@@ -5,9 +5,21 @@ description: >-
   interface (API) based on the SDMX standard. These APIs are free of charge and are
   offered subject to your acceptance of OECD Terms and Conditions.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oecd.png
 tags:
   - Data
   - Statistics
@@ -18,23 +30,43 @@ modified: '2026-04-28'
 url: https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: oecd:oecd
-    name: OECD Data API
-    description: >-
-      The OECD provides programmatic access to OECD data through an application programming
-      interface (API) based on the SDMX standard. These APIs are free of charge and
-      are offered subject to your acceptance of OECD Terms and Conditions.
-    humanURL: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
-    baseURL: https://sdmx.oecd.org/public/rest
-    tags:
-      - Data
-      - Statistics
-      - SDMX
-    properties:
-      - type: Documentation
-        url: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
-      - type: Developer
-        url: https://data-explorer.oecd.org/
+- aid: oecd:oecd
+  name: OECD Data API
+  description: >-
+    The OECD provides programmatic access to OECD data through an application programming interface (API)
+    based on the SDMX standard. These APIs are free of charge and are offered subject to your acceptance
+    of OECD Terms and Conditions.
+  humanURL: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+  baseURL: https://sdmx.oecd.org/public/rest
+  tags:
+  - Data
+  - Statistics
+  - SDMX
+  properties:
+  - type: Documentation
+    url: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+  - type: Developer
+    url: https://data-explorer.oecd.org/
+- aid: oecd:oecd-data-api
+  name: OECD Data API
+  description: The Data API from OECD — 2 operation(s) for data.
+  humanURL: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+  baseURL: https://sdmx.oecd.org/public/rest
+  tags:
+  - Data
+  properties:
+  - type: OpenAPI
+    url: openapi/oecd-data-api-openapi.yml
+- aid: oecd:oecd-structure-api
+  name: OECD Structure API
+  description: The Structure API from OECD — 4 operation(s) for structure.
+  humanURL: https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html
+  baseURL: https://sdmx.oecd.org/public/rest
+  tags:
+  - Structure
+  properties:
+  - type: OpenAPI
+    url: openapi/oecd-structure-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/oecd-agentic-access.yml
