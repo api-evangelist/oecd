@@ -1,0 +1,16 @@
+{
+  "provider": "oecd",
+  "sources": [
+    "oecd-data-api-openapi.yml",
+    "oecd-structure-api-openapi.yml"
+  ],
+  "outputs": [
+    "oecd-data-api-openapi.yml",
+    "oecd-structure-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
