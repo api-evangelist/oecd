@@ -1,0 +1,123 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OECD SDMX REST Data API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve data (SDMX v1.5 path)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/data/:flow/:key",
+            "params": [
+              {
+                "name": "flow",
+                "value": "",
+                "type": "path",
+                "description": "Full dataflow reference, e.g. `OECD.ENV.EPI,DSD_ECH@EXT_DROUGHT,1.0`"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "Dot-separated dimension key (use `all` to retrieve everything)"
+              },
+              {
+                "name": "startPeriod",
+                "value": "",
+                "type": "query",
+                "description": "Start of time period (e.g. 2020)"
+              },
+              {
+                "name": "endPeriod",
+                "value": "",
+                "type": "query",
+                "description": "End of time period (e.g. 2024)"
+              },
+              {
+                "name": "dimensionAtObservation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updatedAfter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve observations for a dataflow filtered by a dimension key\n(dot-separated dimension codes). Supports SDMX content negotiation\n(XML / JSON / CSV) via the Accept header.\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve data (SDMX v2 path)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/v2/data/dataflow/:agencyId/:flowId/:version/:key",
+            "params": [
+              {
+                "name": "agencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "flowId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "startPeriod",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endPeriod",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "measures",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updatedAfter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "SDMX v2.0.0 data query with explicit agency, dataflow, version and\nkey components, plus enhanced attribute, measure, and update filters.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

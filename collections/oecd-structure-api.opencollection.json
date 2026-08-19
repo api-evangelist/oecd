@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OECD SDMX REST Data Structure API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Structure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve dataflow metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/dataflow/:agencyId/:resourceId/:version",
+            "params": [
+              {
+                "name": "agencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "references",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve dataflow metadata"
+        },
+        {
+          "info": {
+            "name": "Retrieve data structure definition (DSD)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/datastructure/:agencyId/:resourceId/:version",
+            "params": [
+              {
+                "name": "agencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve data structure definition (DSD)"
+        },
+        {
+          "info": {
+            "name": "Retrieve a code list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/codelist/:agencyId/:resourceId/:version",
+            "params": [
+              {
+                "name": "agencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a code list"
+        },
+        {
+          "info": {
+            "name": "Retrieve a concept scheme",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sdmx.oecd.org/public/rest/conceptscheme/:agencyId/:resourceId/:version",
+            "params": [
+              {
+                "name": "agencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a concept scheme"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
