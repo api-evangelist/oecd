@@ -5,6 +5,18 @@ description: >-
   interface (API) based on the SDMX standard. These APIs are free of charge and are
   offered subject to your acceptance of OECD Terms and Conditions.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
