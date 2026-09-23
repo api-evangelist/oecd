@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: OECD SDMX REST Data Structure API
+  title: OECD SDMX REST Structure API
   description: 'The OECD provides programmatic access to its statistical data through a
 
     public SDMX REST API. Both SDMX REST v1.5.0 and v2.0.0 paths are exposed.
@@ -11,9 +11,7 @@ info:
 
     and offered under the OECD Terms and Conditions; no authentication is
 
-    required for public data.
-
-    '
+    required for public data.'
   version: 2.0.0
   contact:
     name: OECD Data
@@ -70,6 +68,8 @@ paths:
       responses:
         '200':
           description: SDMX structure response
+      operationId: getDataflowByAgencyIdByResourceIdByVersion
+      x-operation-id-source: derived
   /datastructure/{agencyId}/{resourceId}/{version}:
     get:
       tags:
@@ -94,6 +94,8 @@ paths:
       responses:
         '200':
           description: SDMX DSD response
+      operationId: getDatastructureByAgencyIdByResourceIdByVersion
+      x-operation-id-source: derived
   /codelist/{agencyId}/{resourceId}/{version}:
     get:
       tags:
@@ -118,6 +120,8 @@ paths:
       responses:
         '200':
           description: SDMX code list response
+      operationId: getCodelistByAgencyIdByResourceIdByVersion
+      x-operation-id-source: derived
   /conceptscheme/{agencyId}/{resourceId}/{version}:
     get:
       tags:
@@ -142,3 +146,5 @@ paths:
       responses:
         '200':
           description: SDMX concept scheme response
+      operationId: getConceptschemeByAgencyIdByResourceIdByVersion
+      x-operation-id-source: derived

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: OECD SDMX REST Data API
   description: 'The OECD provides programmatic access to its statistical data through a
@@ -11,9 +11,7 @@ info:
 
     and offered under the OECD Terms and Conditions; no authentication is
 
-    required for public data.
-
-    '
+    required for public data.'
   version: 2.0.0
   contact:
     name: OECD Data
@@ -36,9 +34,7 @@ paths:
 
         (dot-separated dimension codes). Supports SDMX content negotiation
 
-        (XML / JSON / CSV) via the Accept header.
-
-        '
+        (XML / JSON / CSV) via the Accept header.'
       parameters:
       - in: path
         name: flow
@@ -78,6 +74,8 @@ paths:
             application/vnd.sdmx.data+json: {}
             application/vnd.sdmx.genericdata+xml: {}
             text/csv: {}
+      operationId: getDataByFlowByKey
+      x-operation-id-source: derived
   /v2/data/dataflow/{agencyId}/{flowId}/{version}/{key}:
     get:
       tags:
@@ -85,9 +83,7 @@ paths:
       summary: Retrieve data (SDMX v2 path)
       description: 'SDMX v2.0.0 data query with explicit agency, dataflow, version and
 
-        key components, plus enhanced attribute, measure, and update filters.
-
-        '
+        key components, plus enhanced attribute, measure, and update filters.'
       parameters:
       - in: path
         name: agencyId
@@ -141,3 +137,5 @@ paths:
       responses:
         '200':
           description: Data response (SDMX v2)
+      operationId: getV2DataDataflowByAgencyIdByFlowIdByVersionByKey
+      x-operation-id-source: derived
