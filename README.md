@@ -1,4 +1,4 @@
-# OECD (oecd)
+# OECD
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,117 @@
 
 The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard. These APIs are free of charge and are offered subject to your acceptance of OECD Terms and Conditions.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/oecd/refs/heads/main/apis.yml)
+**Areas:** Data · Statistics · Economics · SDMX
 
-## Scope
+## OECD on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for OECD is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/oecd/](https://apis.io/providers/oecd/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Data
-- Statistics
-- Economics
-- SDMX
+- [OECD Data API](https://apis.io/apis/oecd/oecd/) — The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard. These APIs are free of…
+- [OECD Data API](https://apis.io/apis/oecd/oecd-data-api/) — The Data API from OECD — 2 operation(s) for data.
+- [OECD Structure API](https://apis.io/apis/oecd/oecd-structure-api/) — The Structure API from OECD — 4 operation(s) for structure.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-06
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### OECD Data API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The OECD provides programmatic access to OECD data through an application programming interface (API) based on the SDMX standard. These APIs are free of charge and are offered subject to your acceptance of OECD Terms and Conditions.
+- [Oecd Agentic Access](https://apis.io/agentic-access/oecd/oecd-agentic-access/)
 
-- **Human URL:** [https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html](https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html)
-- **Base URL:** `https://sdmx.oecd.org/public/rest`
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Data
-- Statistics
-- SDMX
+- [OECD SDMX REST API](https://apis.io/collections/oecd/open-oecd/)
+- [OECD SDMX REST Data API](https://apis.io/collections/oecd/open-oecd-data-api/)
+- [OECD SDMX REST Data Structure API](https://apis.io/collections/oecd/open-oecd-structure-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html)
-- [Developer](https://data-explorer.oecd.org/)
-- [Postman Collection](collections/oecd.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oecd.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Oecd Domain Security](https://apis.io/security/oecd/oecd-domain-security/)
 
-- [GitHub Organization](https://github.com/OECD)
-- [LinkedIn](https://www.linkedin.com/company/oecd)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Oecd Plans Pricing](https://apis.io/plans/oecd/oecd-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Oecd Rate Limits](https://apis.io/rate-limits/oecd/oecd-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Oecd Finops](https://apis.io/finops/oecd/oecd-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.oecd.org/)
-- [Terms of Service](https://www.oecd.org/termsandconditions/)
+- [Terms of service](https://www.oecd.org/termsandconditions/)
+- [GitHub](https://github.com/OECD)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 18.4 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/oecd/](https://apis.io/providers/oecd/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OECD: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/oecd/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
